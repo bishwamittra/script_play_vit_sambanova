@@ -34,7 +34,7 @@ def seed_everything(seed):
 seed = 131
 seed_everything(seed)
 
-# max 384 x 384
+# The maximum image size in SambaNova: 384 x 384
 
 train_dataset = ChestXrayDataSet(data_dir=path_image,
                                     image_list_file=train_df_path,
