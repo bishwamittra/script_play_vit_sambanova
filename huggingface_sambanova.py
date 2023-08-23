@@ -2,7 +2,7 @@ import torch
 import random
 import os
 import numpy as np
-from utils import ChestXrayDataSet
+from data import ChestXrayDataSet
 import torchvision.transforms as transforms
 from torch.utils.data import DataLoader
 from transformers import ViTFeatureExtractor, ViTForImageClassification
@@ -18,10 +18,12 @@ from sambaflow.samba.utils.common import common_app_driver
 
 
 
-path_image = "input/images/"
-train_df_path ="input/labels/train_list.txt"
-test_df_path = "input/labels/test_list.txt"
-val_df_path = "input/labels/val_list.txt"
+if(False): # compilation does not rely on this code
+
+    path_image = "input/images/"
+    train_df_path ="input/labels/train_list.txt"
+    test_df_path = "input/labels/test_list.txt"
+    val_df_path = "input/labels/val_list.txt"
 
 num_epochs = 10
 num_labels = 14
@@ -44,47 +46,48 @@ seed_everything(seed)
 
 # The maximum image size in SambaNova: 384 x 384
 
-train_dataset = ChestXrayDataSet(data_dir=path_image,
-                                    image_list_file=train_df_path,
-                                    transform=transforms.Compose(
-                                    [
-                                        transforms.RandomHorizontalFlip(),
-                                        transforms.RandomRotation(10),
-                                        transforms.Resize(256),
-                                        transforms.CenterCrop(224),
-                                        transforms.ToTensor(),
-                                        normalize
-                                    ]
-                                    ))
-train_loader = DataLoader(dataset=train_dataset, batch_size=batch_size,
-                             shuffle=False, num_workers=8, pin_memory=True)
+if(False): # compilation does not rely on this code
+    train_dataset = ChestXrayDataSet(data_dir=path_image,
+                                        image_list_file=train_df_path,
+                                        transform=transforms.Compose(
+                                        [
+                                            transforms.RandomHorizontalFlip(),
+                                            transforms.RandomRotation(10),
+                                            transforms.Resize(256),
+                                            transforms.CenterCrop(224),
+                                            transforms.ToTensor(),
+                                            normalize
+                                        ]
+                                        ))
+    train_loader = DataLoader(dataset=train_dataset, batch_size=batch_size,
+                                shuffle=False, num_workers=8, pin_memory=True)
 
-val_dataset = ChestXrayDataSet(data_dir=path_image,
-                                    image_list_file=val_df_path,
-                                    transform=transforms.Compose(
-                                    [
-                                        transforms.Resize(256),
-                                        transforms.CenterCrop(224),
-                                        transforms.ToTensor(),
-                                        normalize
-                                    ]))
-val_loader = DataLoader(dataset=val_dataset, batch_size=batch_size,
-                             shuffle=False, num_workers=8, pin_memory=True)
+    val_dataset = ChestXrayDataSet(data_dir=path_image,
+                                        image_list_file=val_df_path,
+                                        transform=transforms.Compose(
+                                        [
+                                            transforms.Resize(256),
+                                            transforms.CenterCrop(224),
+                                            transforms.ToTensor(),
+                                            normalize
+                                        ]))
+    val_loader = DataLoader(dataset=val_dataset, batch_size=batch_size,
+                                shuffle=False, num_workers=8, pin_memory=True)
 
 
 
-test_dataset = ChestXrayDataSet(data_dir=path_image,
-                                    image_list_file=test_df_path,
-                                    transform=transforms.Compose(
-                                    [
-                                        transforms.Resize(256),
-                                        transforms.CenterCrop(224),
-                                        transforms.ToTensor(),
-                                        normalize
-                                    ]
-                                    ))
-test_loader = DataLoader(dataset=test_dataset, batch_size=batch_size,
-                             shuffle=False, num_workers=8, pin_memory=True)
+    test_dataset = ChestXrayDataSet(data_dir=path_image,
+                                        image_list_file=test_df_path,
+                                        transform=transforms.Compose(
+                                        [
+                                            transforms.Resize(256),
+                                            transforms.CenterCrop(224),
+                                            transforms.ToTensor(),
+                                            normalize
+                                        ]
+                                        ))
+    test_loader = DataLoader(dataset=test_dataset, batch_size=batch_size,
+                                shuffle=False, num_workers=8, pin_memory=True)
 
 
 # Load ViT model and feature extractor
@@ -131,7 +134,7 @@ else:
     common_app_driver(args, model, inputs, optimizer, name='vit')
 
 
-
+quit()
 
 # Train the model and benchmark the wall clock time
 def train_epoch(model, loader, optimizer, criterion, device):
@@ -220,3 +223,5 @@ end_time = time()
 
 # Print the wall clock time
 print(f"Training wall clock time: {end_time - start_time} seconds")
+
+    
