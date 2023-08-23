@@ -92,7 +92,8 @@ model.to(device)
 # Define loss function and optimizer
 # criterion = torch.nn.CrossEntropyLoss()
 criterion = torch.nn.BCEWithLogitsLoss(pos_weight=torch.ones([num_labels])).to(device)
-optimizer = torch.optim.AdamW(model.parameters(), lr=1e-4)
+optimizer = torch.optim.SGD(model.parameters(), lr=1e-4, momentum=0.9, weight_decay=1e-4)
+# optimizer = torch.optim.AdamW(model.parameters(), lr=1e-4)
 
 # Train the model and benchmark the wall clock time
 def train_epoch(model, loader, optimizer, criterion, device):
