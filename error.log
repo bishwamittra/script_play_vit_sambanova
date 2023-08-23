@@ -1,0 +1,487 @@
+(sambanova) ghoshb@sn30-r1-h1:~/work/vision_transformer$ python huggingface_sambanova.py compile
+2023-08-23 15:50:50.373418: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-08-23 15:50:50.512894: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory
+2023-08-23 15:50:50.512937: I tensorflow/compiler/xla/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2023-08-23 15:50:51.117309: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory
+2023-08-23 15:50:51.117380: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory
+2023-08-23 15:50:51.117390: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+/home/ghoshb/.virtualenvs/sambanova/lib/python3.7/site-packages/transformers/models/vit/feature_extraction_vit.py:31: FutureWarning: The class ViTFeatureExtractor is deprecated and will be removed in version 5 of Transformers. Please use ViTImageProcessor instead.
+  FutureWarning,
+Some weights of the model checkpoint at google/vit-base-patch16-224-in21k were not used when initializing ViTForImageClassification: ['pooler.dense.weight', 'pooler.dense.bias']
+- This IS expected if you are initializing ViTForImageClassification from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing ViTForImageClassification from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of ViTForImageClassification were not initialized from the model checkpoint at google/vit-base-patch16-224-in21k and are newly initialized: ['classifier.bias', 'classifier.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[warning] [samba]: Model running in inference. Setting requires_grad of all params to False
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+[info] [samba]: __get__ is not supported on RDU, default to torch.nn.Parameter api
+Log ID initialized to: [ghoshb][python][2372664] at /var/log/sambaflow/runtime/sn.log
+[warning] [samba]: The conv2d operator is experimental.
+[warning] [samba]: The layer_norm operator is experimental.
+[warning] [samba]: The mul operator is experimental.
+Traceback (most recent call last):
+  File "huggingface_sambanova.py", line 131, in <module>
+    common_app_driver(args, model, inputs, optimizer, name='vit')
+  File "sambaflow/samba/utils/common.py", line 59, in sambaflow.samba.utils.common.common_app_driver
+  File "sambaflow/samba/session.py", line 1997, in sambaflow.samba.session.SambaSession.compile
+  File "sambaflow/samba/session.py", line 2035, in sambaflow.samba.session.SambaSession._get_torch_model_output_tensors_helper
+  File "sambaflow/samba/_trace_utils.py", line 317, in sambaflow.samba._trace_utils._get_output_tensors
+  File "sambaflow/samba/_trace_utils.py", line 352, in sambaflow.samba._trace_utils._trace_single_torch_graph
+  File "sambaflow/samba/_trace_utils.py", line 385, in sambaflow.samba._trace_utils._trace_torch_graph
+  File "sambaflow/samba/_trace_utils.py", line 386, in sambaflow.samba._trace_utils._trace_torch_graph
+  File "sambaflow/samba/_trace_utils.py", line 390, in sambaflow.samba._trace_utils._trace_torch_graph
+  File "/usr/local/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1120, in _call_impl
+    result = forward_call(*input, **kwargs)
+  File "/home/ghoshb/.virtualenvs/sambanova/lib/python3.7/site-packages/transformers/models/vit/modeling_vit.py", line 810, in forward
+    return_dict=return_dict,
+  File "/usr/local/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1120, in _call_impl
+    result = forward_call(*input, **kwargs)
+  File "/home/ghoshb/.virtualenvs/sambanova/lib/python3.7/site-packages/transformers/models/vit/modeling_vit.py", line 592, in forward
+    return_dict=return_dict,
+  File "/usr/local/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1120, in _call_impl
+    result = forward_call(*input, **kwargs)
+  File "/home/ghoshb/.virtualenvs/sambanova/lib/python3.7/site-packages/transformers/models/vit/modeling_vit.py", line 413, in forward
+    layer_outputs = layer_module(hidden_states, layer_head_mask, output_attentions)
+  File "/usr/local/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1120, in _call_impl
+    result = forward_call(*input, **kwargs)
+  File "/home/ghoshb/.virtualenvs/sambanova/lib/python3.7/site-packages/transformers/models/vit/modeling_vit.py", line 355, in forward
+    output_attentions=output_attentions,
+  File "/usr/local/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1120, in _call_impl
+    result = forward_call(*input, **kwargs)
+  File "/home/ghoshb/.virtualenvs/sambanova/lib/python3.7/site-packages/transformers/models/vit/modeling_vit.py", line 294, in forward
+    self_outputs = self.attention(hidden_states, head_mask, output_attentions)
+  File "/usr/local/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1120, in _call_impl
+    result = forward_call(*input, **kwargs)
+  File "/home/ghoshb/.virtualenvs/sambanova/lib/python3.7/site-packages/transformers/models/vit/modeling_vit.py", line 232, in forward
+    attention_probs = attention_probs * head_mask
+  File "sambaflow/samba/sambatensor.py", line 1519, in sambaflow.samba.sambatensor.SambaTensor.__mul__
+  File "sambaflow/samba/functional/functional_decorator_utils.py", line 111, in sambaflow.samba.functional.functional_decorator_utils.implements.decorator.cast_tensor_wrapper
+  File "sambaflow/samba/functional/functional_decorator_utils.py", line 168, in sambaflow.samba.functional.functional_decorator_utils.torch_annotations.func_annotated
+  File "sambaflow/samba/functional/arithmetic/mul.py", line 61, in sambaflow.samba.functional.arithmetic.mul.mul
+  File "sambaflow/samba/functional/functional_utils.py", line 97, in sambaflow.samba.functional.functional_utils._get_static_operation_outputs
+  File "sambaflow/samba/ops/binary.py", line 43, in sambaflow.samba.ops.binary.BroadcastBinaryOperation.__call__
+  File "sambaflow/samba/ops/op_utils.py", line 36, in sambaflow.samba.ops.op_utils.broadcast_input_shapes
+RuntimeError: The size of tensor a (12) must match the size of tensor b (14) at non-singleton dimension 1
