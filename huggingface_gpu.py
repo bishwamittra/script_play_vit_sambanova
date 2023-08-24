@@ -24,6 +24,7 @@ def argparser():
     parser.add_argument('--epoch', type=int, default=50, help='server epochs to train global model with synthetic data')
     parser.add_argument('--save_root', type=str, default='./results/', help='path to save results')
     parser.add_argument('--one_gpu', action='store_true', default=False, help='use only one gpu')
+    parser.add_argument('--pretrain', action='store_true', default=False, help='whether to fine-tune pretrained model weights')
 
     args = parser.parse_args()
 
@@ -110,10 +111,12 @@ def main(args, logger):
 
     # Load ViT model and feature extractor
     # feature_extractor = ViTFeatureExtractor.from_pretrained('google/vit-base-patch16-224-in21k')
-    model = ViTForImageClassification.from_pretrained('google/vit-base-patch16-224-in21k')
-    model.config.num_labels = num_labels  # Set the number of output classes
-    model.classifier = torch.nn.Linear(model.config.hidden_size, model.config.num_labels)
-    # model.to(device)
+    if args.pretrain:
+        model = ViTForImageClassification.from_pretrained('google/vit-base-patch16-224-in21k')
+        model.config.num_labels = num_labels  # Set the number of output classes
+        model.classifier = torch.nn.Linear(model.config.hidden_size, model.config.num_labels)
+    else:
+        model = ViTForImageClassification(config='google/vit-base-patch16-224-in21k', num_labels=14)
 
     # set multi-gpu parallel
     if not args.one_gpu:
