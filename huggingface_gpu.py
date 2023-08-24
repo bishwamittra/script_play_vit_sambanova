@@ -126,7 +126,7 @@ def main(args, logger):
 
     # Define loss function and optimizer
     criterion = torch.nn.BCEWithLogitsLoss(pos_weight=torch.ones([num_labels])).to(device)
-    optimizer = torch.optim.AdamW(model.parameters(), lr=1e-4)
+    optimizer = torch.optim.AdamW(model.parameters(), lr=args.lr)
 
     total_time_all_epochs, total_time_train = 0, 0
     best_loss = 1e10 
@@ -186,8 +186,8 @@ def main(args, logger):
     end_time_stamp = strftime('%Y-%m-%d %H:%M:%S')
     logger.info("**************************************************************")
     logger.info(f">> Experiment {args.exp_seq} completes at {end_time_stamp}")
-    logger.info(f">> Total time used over {num_epochs} epochs: {total_time_all_epochs:.2f} mins")
-    logger.info(f">> Total time used for training: {total_time_train:.2f} mins")
+    logger.info(f">> Total time used for training: {total_time_train/60:.2f} mins")
+    logger.info(f">> Total time used over {num_epochs} epochs: {total_time_all_epochs/60:.2f} mins")
 
 
 

@@ -2,7 +2,7 @@ import torch
 import random
 import os
 import numpy as np
-from utils import ChestXrayDataSet
+from data import ChestXrayDataSet
 import torchvision.transforms as transforms
 from torch.utils.data import DataLoader
 from transformers import ViTFeatureExtractor, ViTForImageClassification
