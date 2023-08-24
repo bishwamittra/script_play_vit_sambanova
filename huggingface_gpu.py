@@ -122,14 +122,16 @@ def main(args, logger):
             model = nn.DataParallel(model, device_ids=[0, 1, 2, 3])
 
     model.to(device)
-    logger.info('Model initialized')
+    logger.info('>> Model initialized')
 
     # Define loss function and optimizer
     criterion = torch.nn.BCEWithLogitsLoss(pos_weight=torch.ones([num_labels])).to(device)
     optimizer = torch.optim.AdamW(model.parameters(), lr=1e-4)
 
-    total_time_all_epochs, total_time_train, total_time_eval = 0, 0, 0
+    total_time_all_epochs, total_time_train = 0, 0
+    best_loss = 1e10 
     logger.info(f">> Starting experiment {args.exp_seq}")
+    training_time_start = time()
     for epoch in range(num_epochs):
         # training
         start_time_epoch_train = time()
@@ -137,30 +139,55 @@ def main(args, logger):
         end_time_epoch_train = time()
         epoch_time_train = end_time_epoch_train - start_time_epoch_train
         total_time_train += epoch_time_train
-        logger.info(f"Epoch {epoch+1}/{num_epochs}, Train Loss: {train_loss:.4f}, Time taken: {epoch_time_train/60:.2f} minutes")
 
         # validation performance
         start_time_epoch_eval = time()
         val_loss, val_f1, val_auc, val_sensitivity, val_precision = evaluate(model, val_loader, criterion, device)
         end_time_epoch_eval = time()
         epoch_time_eval = end_time_epoch_eval - start_time_epoch_eval
-        total_time_eval += epoch_time_eval
-        logger.info(f"Epoch {epoch+1}/{num_epochs}, Val Loss: {val_loss:.4f}, Val F1 Score: {val_f1:.4f}, Val AUC: {val_auc:.4f}, Val Sensitivity: {val_sensitivity:.4f}, Val Precision: {val_precision:.4f}")
-
         epoch_time_all = epoch_time_train + epoch_time_eval
-        total_time_all_epochs += epoch_time_all
-        logger.info(f"Epoch {epoch+1}/{num_epochs} takes {epoch_time_all/60:.2f} minutes")
 
-    logger.info(f">> Training completed, testing in progress...")
+
+        # save checkpoint
+        if val_loss<best_loss:
+            best_loss=val_loss
+            best_mdl=model.state_dict() 
+            torch.save({
+                'epoch': epoch,
+                'model_state_dict': best_mdl,
+                'optimizer_state_dict': optimizer.state_dict(),
+                'loss': criterion,
+                }, os.path.join(args.save_path, 'checkpoint.pt'))
+            logger.info(f'Epoch {epoch:3d}: >> Checkpoint saved')
+
+        
+        # print the epoch information
+        logger.info(f"Epoch {epoch+1}/{num_epochs}: Completed in {epoch_time_all/60:.2f} mins")
+        logger.info(f"Epoch {epoch+1}/{num_epochs}: Train Loss: {train_loss:.4f}, Training time: {epoch_time_train/60:.2f} mins")
+        logger.info(f"Epoch {epoch+1}/{num_epochs}: Val Loss: {val_loss:.4f}, Checkpoint val loss: {best_loss:.4f}")
+        logger.info(f"Epoch {epoch+1}/{num_epochs}: Val F1 Score: {val_f1:.4f}, Val AUC: {val_auc:.4f}, Val Sensitivity: {val_sensitivity:.4f}, Val Precision: {val_precision:.4f}")
+    
+    training_time_end=time()
+    total_time_all_epochs = training_time_end - training_time_start
+    logger.info(f">> Training completed.")
+    # logger.info(f">> Training completed, time elapsed: {total_time_all_epochs/60:.2f} mins")
+   
     # Test performance
+    logger.info(">> Testing in progress...")
+    model.load_state_dict(best_mdl) # load the best model states from checkpoint
     start_time_test = time()
     test_loss, test_f1, test_auc, test_sensitivity, test_precision = evaluate(model, test_loader, criterion, device)
     end_time_test = time()
+    total_time_eval = end_time_test - start_time_test
     logger.info(f">> Final results: Test Loss: {test_loss:.4f}, test F1: {test_f1:.4f}, test AUC: {test_auc:.4f}, test Sensitivity: {test_sensitivity:.4f}, Test Precision: {test_precision:.4f}, Time taken: {end_time_test - start_time_test}")
-    
+    logger.info(f">> Testing time elapsed: {total_time_eval/60:.2f} mins")
+
+    # summary
     end_time_stamp = strftime('%Y-%m-%d %H:%M:%S')
-    logger.info(f">> Experiment {args.exp_seq} completes at {end_time_stamp}, time elapsed: {total_time_all_epochs/60:.2f} minutes")
-    logger.info(f">> Training time: {total_time_train/60:.2f} minutes, Evaluation time: {total_time_eval/60:.2f} minutes")
+    logger.info("**************************************************************")
+    logger.info(f">> Experiment {args.exp_seq} completes at {end_time_stamp}")
+    logger.info(f">> Total time used over {num_epochs} epochs: {total_time_all_epochs:.2f} mins")
+    logger.info(f">> Total time used for training: {total_time_train:.2f} mins")
 
 
 
