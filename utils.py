@@ -94,9 +94,9 @@ def evaluate(model, eval_loader, criterion, device, threshold=0.5):
             all_labels.extend(labels.cpu().numpy())
 
     val_loss = total_loss / len(eval_loader)
-    val_f1 = f1_score(all_labels, all_preds, average='weighted')
-    val_auc = roc_auc_score(all_labels, all_probs, average='weighted')
-    val_sensitivity = recall_score(all_labels, all_preds, average='weighted')
-    val_precision = precision_score(all_labels, all_preds, average='weighted')
+    val_f1 = f1_score(all_labels, all_preds, average='macro')
+    val_auc = roc_auc_score(all_labels, all_probs, average='macro')
+    val_sensitivity = recall_score(all_labels, all_preds, average='macro')
+    val_precision = precision_score(all_labels, all_preds, average='macro')
 
     return val_loss, val_f1, val_auc, val_sensitivity, val_precision

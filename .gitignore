@@ -5,3 +5,4 @@ input/*
 dogs-vs-cats.zip
 results/*
 out/*
+__pycache__/*

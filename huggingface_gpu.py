@@ -179,7 +179,7 @@ def main(args, logger):
     test_loss, test_f1, test_auc, test_sensitivity, test_precision = evaluate(model, test_loader, criterion, device)
     end_time_test = time()
     total_time_eval = end_time_test - start_time_test
-    logger.info(f">> Final results: Test Loss: {test_loss:.4f}, test F1: {test_f1:.4f}, test AUC: {test_auc:.4f}, test Sensitivity: {test_sensitivity:.4f}, Test Precision: {test_precision:.4f}, Time taken: {end_time_test - start_time_test}")
+    logger.info(f">> Final results: Test Loss: {test_loss:.4f}, test F1: {test_f1:.4f}, test AUC: {test_auc:.4f}, test Sensitivity: {test_sensitivity:.4f}, Test Precision: {test_precision:.4f}")
     logger.info(f">> Testing time elapsed: {total_time_eval/60:.2f} mins")
 
     # summary
