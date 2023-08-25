@@ -5,7 +5,7 @@ import numpy as np
 import argparse
 import torchvision.transforms as transforms
 from torch.utils.data import DataLoader
-from transformers import ViTFeatureExtractor, ViTForImageClassification
+from transformers import ViTFeatureExtractor, ViTForImageClassification, ViTConfig
 from time import time, strftime
 import json
 # from sklearn.metrics import f1_score, roc_auc_score, recall_score, precision_score
@@ -116,7 +116,7 @@ def main(args, logger):
         model.config.num_labels = num_labels  # Set the number of output classes
         model.classifier = torch.nn.Linear(model.config.hidden_size, model.config.num_labels)
     else:
-        model = ViTForImageClassification(config='google/vit-base-patch16-224-in21k', num_labels=14)
+        model = ViTForImageClassification(config=ViTConfig(num_labels=14))
 
     # set multi-gpu parallel
     if not args.one_gpu:
