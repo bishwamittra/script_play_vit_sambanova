@@ -65,7 +65,7 @@ def main(args, logger):
     train_loader = DataLoader(
         dataset=train_dataset, 
         batch_size=batch_size,
-        shuffle=False, 
+        shuffle=True, 
         num_workers=8, 
         pin_memory=True
     )
