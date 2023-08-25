@@ -116,7 +116,7 @@ def main(args, logger):
         model.config.num_labels = num_labels  # Set the number of output classes
         model.classifier = torch.nn.Linear(model.config.hidden_size, model.config.num_labels)
     else:
-        model = ViTForImageClassification(config=ViTConfig(num_labels=14))
+        model = ViTForImageClassification(config=ViTConfig(num_labels=14)) # WY: this should work
 
     # set multi-gpu parallel
     if not args.one_gpu:
